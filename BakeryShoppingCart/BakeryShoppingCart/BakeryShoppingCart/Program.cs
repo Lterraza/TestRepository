@@ -1,6 +1,8 @@
 ﻿using System;
+using BakeryShoppingCart.Models;
+using BakeryShoppingCart.DTOS;
 
-namespace BakeryShoppingCartMOD2
+namespace BakeryShoppingCart
 {
     class Program
     {
@@ -13,41 +15,21 @@ namespace BakeryShoppingCartMOD2
 
 
             Cake cakeObject = new Cake("Wedding Cake", "Strawberry");
-            Console.WriteLine(String.Format(stringFormat, cakeObject.type, cakeObject.flavor));
-
-            Cake cakeObject2 = new Cake("Birthday Cake", "German_Chocolate");
-            Console.WriteLine(String.Format(stringFormat, cakeObject2.type, cakeObject2.flavor));
+            Console.WriteLine(String.Format(stringFormat, cakeObject.Type, cakeObject.Flavor));
 
 
-            Cake cakeObject3 = new Cake();
-            cakeObject3.type = "Graduation cake";
-            cakeObject3.flavor = "Vanilla";
+            CakeDTO newDTOCake = new CakeDTO();
+                newDTOCake.CakeId = 1;
+            newDTOCake.Flavor = "Chocolate";
+            newDTOCake.Form = "Square";
+            newDTOCake.Size = "Meidum";
+            newDTOCake.Type = "Wedding";
 
-            
 
-            Console.WriteLine(String.Format(stringFormat, cakeObject3.type, cakeObject3.flavor));
         }
     }
-
-    public class Cake
-    {
-        public string type { get; set; }
-        public string flavor { get; set; }
-
-        public Cake(string newType, string newFlavor)
-        {
-            this.type = newType;
-            this.flavor = newFlavor;
-        }
-
-        public Cake()
-        {
-            Console.WriteLine("I am inside of the constructor");
-
-        }
-
-    }
-} 
+}
+ 
     
 
 
